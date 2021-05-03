@@ -2,6 +2,8 @@
 import React from 'react'
 import {Header, Divider, Table} from 'semantic-ui-react'
 
+import ProductVideo from '../VideoPlayer/index'
+
 export default ({description, material, max_watt, bulb_qty, finish, bulb}) => (
   <div>
     <Header as="h3">About this product</Header>
@@ -39,5 +41,7 @@ export default ({description, material, max_watt, bulb_qty, finish, bulb}) => (
         </Table.Row>
       </Table.Body>
     </Table>
+    <Divider />
+    <ProductVideo />
   </div>
 )
