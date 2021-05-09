@@ -1,5 +1,4 @@
 import React, {useState, useEffect, memo} from 'react'
-import {useInView} from 'react-intersection-observer'
 import {Video, CloudinaryContext} from 'cloudinary-react'
 
 const PdtVideo = memo(({publicId}) => {
@@ -25,14 +24,11 @@ const PdtVideo = memo(({publicId}) => {
 
 const ProductVideo = ({video = 'video-ecommerce/tomato'}) => {
   const [player, setPlayer] = useState('')
-  const {ref, inView} = useInView({threshold: 0})
   useEffect(() => {
-    if (inView === true) {
-      setPlayer(video)
-    }
-  }, [inView, video])
+    setPlayer(video)
+  }, [video])
   return (
-    <div ref={ref}>
+    <div>
       <PdtVideo publicId={player} />
     </div>
   )
